@@ -5,6 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
+RUN ls
 COPY ["cicdtest/cicdtest.csproj", "cicdtest/"]
 RUN dotnet restore "cicdtest/cicdtest.csproj"
 COPY . .
